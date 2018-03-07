@@ -45,6 +45,7 @@
 % If you would like to change the social information separator from a pipe (|) to something else
 \renewcommand{\acvHeaderSocialSep}{\quad\textbar\quad}
 
+\usepackage{textcomp}
 
 %-------------------------------------------------------------------------------
 %	PERSONAL INFORMATION
@@ -54,15 +55,19 @@
 % \photo{./examples/profile.png}
 \name{Jonathan}{Sieber}
 \position{Software Engineer{\enskip\cdotp\enskip}Hardware Hacker}
-\address{Wachsbleichstraße 1, 01067, Dresden, Deutschland}
+\address{Wachsbleichstraße 1, 01067 Dresden, Deutschland}
+
+\birthdate{\textborn \  22. November 1988, Wiesbaden}
+
+%\photo % should i use one?
 
 \mobile{(+49) 176-45809077}
 \email{mail@strfry.org}
-\homepage{https://strfry.org}
+\homepage{strfry.org}
 \github{strfry}
-% \extrainfo{extra informations}
 
-\quote{``Do one thing, and do it well"}
+
+% \quote{``Do one thing, and do it well"}
 
 
 %-------------------------------------------------------------------------------
@@ -79,13 +84,20 @@
   {Jonathan Sieber~~~·~~~Curriculum Vitae}
   {\thepage}
 
+% re-enable link colors
+\hypersetup{
+  urlcolor = Blue
+}
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\bfseries#2}}
 
 %-------------------------------------------------------------------------------
 %	CV/RESUME CONTENT
 %	Each section is imported separately, open each file in turn to modify content
 %-------------------------------------------------------------------------------
-%\input{cv/education.tex}
+
 \input{cv/skills.tex}
+\input{cv/education.tex}
 \input{cv/experience.tex}
 %\input{cv/extracurricular.tex}
 %\input{cv/honors.tex}
@@ -95,42 +107,6 @@
 %-------------------------------------------------------------------------------
 %	SECTION TITLE
 %-------------------------------------------------------------------------------
-\cvsection{Education}
-
-
-%-------------------------------------------------------------------------------
-%	CONTENT
-%-------------------------------------------------------------------------------
-\begin{cventries}
-
-%---------------------------------------------------------
-  \cventry
-    {B.Sc. in Computer Science} % Degree
-    {Technische Universität Darmstadt} % Institution
-    {Darmstadt} % Location
-    {Oct. 2007 - Mar. 2014} % Date(s)
-    {
-      \begin{cvitems} % Description(s) bullet points
-        \item {Bachelor Thesis: "Implementing a Nintendo Entertainment System on a FPGA"}
-      \end{cvitems}
-    }
-
-    
-    \cventry
-    {Philosophie \& Technik} % Degree
-    {Technische Universität Darmstadt} % Institution
-    {Darmstadt} % Location
-    {Apr. 2014 - Sep. 2016} % Date(s)
-    {
-      \begin{cvitems} % Description(s) bullet points
-        \item {Masterstudiengang, ohne Abschluss}
-      \end{cvitems}
-    }
-
-%---------------------------------------------------------
-\end{cventries}
-
-
 
 %-------------------------------------------------------------------------------
 \end{document}
